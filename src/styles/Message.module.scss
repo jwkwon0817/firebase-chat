@@ -1,0 +1,66 @@
+// Message.module.scss
+@import './_variables';
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  padding: $padding;
+  border-radius: $border-radius;
+  max-width: 60%;
+  word-wrap: break-word;
+  min-width: 300px;
+
+  &.sent {
+    align-self: flex-end;
+    background-color: lighten($primary-color, 30%);
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &.received {
+    align-self: flex-start;
+    background-color: lighten($secondary-color, 40%);
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .content {
+    margin-bottom: 5px;
+  }
+
+  .time {
+    font-size: 0.8em;
+    color: darken($secondary-color, 20%);
+    text-align: right;
+  }
+
+  .deleteButton {
+    align-self: flex-end;
+    background-color: #ff7043;
+    color: #fff;
+    border: none;
+    border-radius: $border-radius;
+    padding: $padding;
+    cursor: pointer;
+    font-size: 0.8em;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      background-color: darken(#ff7043, 10%);
+    }
+  }
+}
